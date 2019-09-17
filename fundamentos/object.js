@@ -11,3 +11,6 @@ var produto = {
 
 console.log(produto.t.local)
 
+console.log();
+console.log('====================================');
+
