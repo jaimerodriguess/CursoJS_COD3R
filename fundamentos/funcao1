@@ -1,0 +1,10 @@
+function imprimirSoma(a, b){
+	console.log(a + b)
+}
+
+imprimirSoma(5, 4, 3)//soma e retorna o valor
+
+/*
+//imprimirSoma(2, 3, 4, 5) utiliza os dois primeiros parametros e ignora os demais.
+
+*/
