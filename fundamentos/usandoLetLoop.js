@@ -9,3 +9,5 @@ for (let i = 0; i < 10; i++){
 
 funcs[2]()
 funcs[7]()
+
+alteração
