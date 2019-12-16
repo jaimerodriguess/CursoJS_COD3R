@@ -37,3 +37,6 @@ function soma(a, b){
     }
 }
 soma(5, 10)(8)
+
+const cincoMais = soma(2,3)
+cincoMais(4)
