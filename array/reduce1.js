@@ -5,7 +5,7 @@ const alunos = [
     { nome: 'Lucas', nota: 8.7, bolsista: true  },
 ]
 
-const resultado = alunos.map(n => n.nota).usort().filter(n => n > 8).reduce( function( acumulador, atual) {
+const resultado = alunos.map(n => n.nota).sort().filter(n => n > 8).reduce( function( acumulador, atual) {
     console.log(acumulador, atual)
     return acumulador + atual
 })
