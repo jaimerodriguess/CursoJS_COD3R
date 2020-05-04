@@ -2,8 +2,8 @@ const express = require('express')
 const port = 3003
 const app = express()
 const bancoDeDados = require('./bancoDeDados')
+app.use(express.json())
 
-//app.use(express.json)
 
 app.get('/products', (request, response, next) => {
     response.send(bancoDeDados.getProducts())
@@ -13,11 +13,26 @@ app.get('/product/:id', (request, response, next) => {
     response.send(bancoDeDados.getProduct(request.params.id))
 })
 
-app.post('/products', (request, response, next) => {
+app.post('/product/create', (request, response, next) => {
     const product = bancoDeDados.saveProduct({
-        name: request.params.name,
+        name: request.body.name,
         preco: request.body.preco
     })
     response.send(product)
 })
-app.listen(port)
+app.put('/product/edit/:id', (request, response, next) => {
+    const product = bancoDeDados.saveProduct({
+        id: request.params.id,
+        name: request.body.name,
+        preco: request.body.preco
+    })
+    response.send(product)
+})
+
+app.delete('product/delete/:id', (request, response, next) => {
+    const product = bancoDeDados.delProduct(request.params.id)
+    response.send(product)
+})
+app.listen(port, () => {
+    console.log('Servidor em execução.')
+})
